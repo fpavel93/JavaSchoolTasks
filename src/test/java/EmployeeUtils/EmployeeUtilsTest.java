@@ -12,10 +12,10 @@ public class EmployeeUtilsTest {
 
     @Test
     public void salariesSum() {
-        List<Employee> list = asList(new Employee(),new Employee(),new Employee());
-        list.get(0).setSalary(10);
-        list.get(1).setSalary(20);
-        list.get(2).setSalary(30);
+        List<Employee> list = asList(
+                Employee.builder().salary(10).build(),
+                Employee.builder().salary(20).build(),
+                Employee.builder().salary(30).build());
 
         int sum = EmployeeUtils.salariesSum(list);
         Assert.assertEquals(60,sum);
@@ -23,16 +23,26 @@ public class EmployeeUtilsTest {
 
     @Test
     public void groupBySeniority() {
-        List<Employee> list = asList(new Employee(),new Employee(),new Employee()
-                ,new Employee(),new Employee(),new Employee());
-        list.get(0).setSalary(10);
-        list.get(1).setSalary(20);
-        list.get(2).setSalary(30);
-        list.get(3).setSalary(5);
-        list.get(4).setSalary(15);
-        list.get(5).setSalary(25);
+        List<Employee> list = asList(
+                Employee.builder().salary(10).build(),
+                Employee.builder().salary(20).build(),
+                Employee.builder().salary(30).build(),
+                Employee.builder().salary(5).build(),
+                Employee.builder().salary(15).build(),
+                Employee.builder().salary(25).build());
 
         Map<Seniority, List<Employee>> map = EmployeeUtils.groupBySeniority(list);
+        System.out.println(map);
+    }
+
+    @Test
+    public void mapNameToSalary() {
+        List<Employee> list = asList(
+                Employee.builder().name("A").salary(10).build(),
+                Employee.builder().name("B").salary(20).build(),
+                Employee.builder().name("A").salary(30).build());
+
+        Map<String, Integer> map = EmployeeUtils.mapNameToSalary(list);
         System.out.println(map);
     }
 }

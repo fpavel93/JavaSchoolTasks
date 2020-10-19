@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingInt;
+import static java.util.stream.Collectors.*;
 
 public class EmployeeUtils {
     public static int salariesSum(List<Employee> employees)
@@ -19,11 +20,16 @@ public class EmployeeUtils {
         return employees.stream()
                 .map(Employee::getName)
                 .sorted(comparingInt(String::length))
-                .collect(Collectors.toList());
+                .collect(toList());
     }
 
     public static Map<Seniority,List<Employee>> groupBySeniority(List<Employee> employees){
         return employees.stream()
-                .collect(Collectors.groupingBy(employee -> Seniority.findBySalary(employee.getSalary())));
+                .collect(groupingBy(employee -> Seniority.findBySalary(employee.getSalary())));
+    }
+
+    public static Map<String,Integer> mapNameToSalary(List<Employee> employees){
+        return employees.stream()
+                .collect(toMap(Employee::getName,Employee::getSalary, Integer::sum));
     }
 }
