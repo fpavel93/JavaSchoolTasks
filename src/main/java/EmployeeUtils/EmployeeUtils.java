@@ -1,6 +1,5 @@
 package EmployeeUtils;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,9 +22,8 @@ public class EmployeeUtils {
                 .collect(Collectors.toList());
     }
 
-    public static void groupBySeniority(List<Employee> employees){
-        Map<Seniority, List<Employee>> map = employees.stream()
-                .collect(Collectors.groupingBy(employee -> (Seniority.findBySalary(employee.getSalary()))));
-        System.out.println(map);
+    public static Map<Seniority,List<Employee>> groupBySeniority(List<Employee> employees){
+        return employees.stream()
+                .collect(Collectors.groupingBy(employee -> Seniority.findBySalary(employee.getSalary())));
     }
 }

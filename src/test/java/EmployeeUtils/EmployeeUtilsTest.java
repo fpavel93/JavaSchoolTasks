@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static java.util.Arrays.asList;
 
@@ -31,6 +32,7 @@ public class EmployeeUtilsTest {
         list.get(4).setSalary(15);
         list.get(5).setSalary(25);
 
-        EmployeeUtils.groupBySeniority(list);
+        Map<Seniority, List<Employee>> map = EmployeeUtils.groupBySeniority(list);
+        System.out.println(map);
     }
 }
