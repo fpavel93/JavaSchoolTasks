@@ -1,23 +1,16 @@
 package design_patterns.radioAlarm;
 
-public class RadioAlarm implements Radio,Alarm {
-    @Override
-    public void a() {
-        System.out.println("do first radio function");
-    }
+import lombok.experimental.Delegate;
 
-    @Override
-    public void b() {
-        System.out.println("do second radio function");
-    }
+public class RadioAlarm implements Radio,Alarm {
+
+    @Delegate
+    RadioImpl radio = new RadioImpl();
+    @Delegate(excludes = AlarmExclusions.class)
+    AlarmImpl alarm = new AlarmImpl();
 
     @Override
     public void c() {
-        System.out.println("do first alarm function");
-    }
-
-    @Override
-    public void d() {
-        System.out.println("do second alarm function");
+        System.out.println("do first alarm function in other way");
     }
 }
