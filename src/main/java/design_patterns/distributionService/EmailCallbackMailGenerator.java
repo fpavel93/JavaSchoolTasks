@@ -1,4 +1,4 @@
-package design_patterns;
+package design_patterns.distributionService;
 
 @TemplateCode(2)
 public class EmailCallbackMailGenerator implements MailGenerator {

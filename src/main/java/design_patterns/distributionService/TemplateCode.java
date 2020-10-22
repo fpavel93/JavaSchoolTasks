@@ -1,4 +1,4 @@
-package design_patterns;
+package design_patterns.distributionService;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
