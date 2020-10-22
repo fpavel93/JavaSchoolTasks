@@ -1,14 +1,18 @@
 package design_patterns.heroesGame;
 
-@CharacterId(1)
 public class Hobbit extends Character {
 
-    public Hobbit() {
-        setPower(0);
-        setHp(3);
-        setType("Hobbit");
+    @Override
+    protected int getInitialHp() {
+        return 3;
     }
 
+    @Override
+    protected int getInitialPower() {
+        return 0;
+    }
+
+    @Override
     public void kick(Character c) {
         toCry();
     }

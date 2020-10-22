@@ -1,9 +1,0 @@
-package design_patterns.heroesGame;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-@Retention(RetentionPolicy.RUNTIME)
-public @interface CharacterId {
-    int value();
-}

@@ -8,14 +8,14 @@ public class GameManager {
         Character attacking = c1;
         Character attacked = c2;
 
-        if(c1.getType().equals("Hobbit") && c2.getType().equals("Hobbit"))
+        if(c1.getClass().getSimpleName().equals("Hobbit") && c2.getClass().getSimpleName().equals("Hobbit"))
         {
             System.out.println("Hobbits cannot fight each other");
         }
         else {
             while (c1.isAlive() && c2.isAlive()) {
                 attacking.kick(attacked);
-                System.out.println(attacking.getType() + " kicked " + attacked.getType());
+                System.out.println(attacking.getClass().getSimpleName() + " kicked " + attacked.getClass().getSimpleName());
                 Character tmp = attacking;
                 attacking = attacked;
                 attacked = tmp;
@@ -24,11 +24,15 @@ public class GameManager {
 
 
             if (!c1.isAlive()) {
-                System.out.println(c1.getType() + " is dead");
+                printDead(c1);
             }
             else {
-                System.out.println(c2.getType() + " is dead");
+                printDead(c2);
             }
         }
+    }
+
+    private void printDead(Character c1) {
+        System.out.println(c1.getClass().getSimpleName() + " is dead");
     }
 }

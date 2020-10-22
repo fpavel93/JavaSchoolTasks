@@ -9,15 +9,15 @@ public class Main {
         CharacterFactory characterFactory = new CharacterFactory();
 
         for (int i = 0; i < 10; i++) {
-            Character c1 = characterFactory.createCharacter();
-            Character c2 = characterFactory.createCharacter();
+            Character c1 = characterFactory.createRandomCharacter();
+            Character c2 = characterFactory.createRandomCharacter();
 
             gameManager.fight(c1,c2);
 
             if (!c1.isAlive()) {
                 c1 = c2;
             }
-            c2 = characterFactory.createCharacter();
+            c2 = characterFactory.createRandomCharacter();
 
             Thread.sleep(1000);
         }

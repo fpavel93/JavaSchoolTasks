@@ -1,22 +1,37 @@
 package design_patterns.heroesGame;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
+
+@Data
 public abstract class Character {
 
-    @Setter(AccessLevel.PROTECTED)
     private int power;
-    @Setter
     private int hp;
-    @Setter
-    private String type;
+
+    Character(){
+        hp = getInitialHp();
+        power = getInitialPower();
+    }
+
+    protected abstract int getInitialHp();
+    protected abstract int getInitialPower();
 
     public abstract void kick(Character c);
 
     public boolean isAlive() {
-        return hp!=0;
+        return hp > 0;
+    }
+
+    protected void die(){
+        hp = 0;
+    }
+
+    protected void decreasePower(int delta){
+        power-=delta;
+    }
+
+    public void decreaseHp(int damage){
+        hp-=damage;
     }
 }
