@@ -14,9 +14,10 @@ public class InjectByTypeAnnotationObjectConfigurator implements ObjectConfigura
         Class<?> type = t.getClass();
         Set<Field> fields = ReflectionUtils.getAllFields(type, field -> field.isAnnotationPresent(InjectByType.class));
         for (Field field : fields) {
-            Class<? extends Field> aClass = field.getClass();
+            Class<?> fieldType = field.getType();
+            Object object = ObjectFactory.getInstance().createObject(fieldType);
             field.setAccessible(true);
-            field.set(t, ObjectFactory.getInstance().createObject(aClass));
+            field.set(t,object);
         }
     }
 }
