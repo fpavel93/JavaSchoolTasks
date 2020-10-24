@@ -1,4 +1,4 @@
-package design_patterns.iRobot;
+package my_spring.iRobot;
 
 public class ConsoleSpeaker implements Speaker {
     @Override

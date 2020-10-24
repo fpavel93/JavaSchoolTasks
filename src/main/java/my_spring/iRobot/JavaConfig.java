@@ -1,4 +1,4 @@
-package design_patterns.iRobot;
+package my_spring.iRobot;
 
 import java.util.HashMap;
 import java.util.Map;
