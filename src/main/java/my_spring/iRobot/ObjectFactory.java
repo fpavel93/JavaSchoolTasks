@@ -3,6 +3,7 @@ package my_spring.iRobot;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -30,6 +31,14 @@ public class ObjectFactory {
         type = resolveImpl(type);
         T t = create(type);
         configure(t);
+
+        Method[] methods = type.getMethods();
+        for (Method method : methods) {
+            if(method.getName().equals("init")){
+                method.invoke(t);
+            }
+        }
+
         return t;
     }
 
@@ -37,7 +46,8 @@ public class ObjectFactory {
         configurators.forEach(configurator -> configurator.configure(t));
     }
 
-    private <T> T create(Class<T> type) throws InstantiationException, IllegalAccessException, java.lang.reflect.InvocationTargetException, NoSuchMethodException {
+    @SneakyThrows
+    private <T> T create(Class<T> type) {
         T t = type.getDeclaredConstructor().newInstance();
         return t;
     }

@@ -45,4 +45,18 @@ public class EmployeeUtilsTest {
         Map<String, Integer> map = EmployeeUtils.mapNameToSalary(list);
         System.out.println(map);
     }
+
+    @Test
+    public void groupNamesBySalary() {
+        List<Employee> list = asList(
+                Employee.builder().name("A").salary(10).build(),
+                Employee.builder().name("B").salary(20).build(),
+                Employee.builder().name("C").salary(30).build(),
+                Employee.builder().name("D").salary(20).build(),
+                Employee.builder().name("E").salary(10).build(),
+                Employee.builder().name("F").salary(10).build());
+
+        Map<Integer,List<String>> map = EmployeeUtils.groupNamesBySalary(list);
+        System.out.println(map);
+    }
 }

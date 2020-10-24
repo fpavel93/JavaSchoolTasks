@@ -2,6 +2,7 @@ package my_spring.iRobot;
 
 public class Main {
     public static void main(String[] args) {
-        ObjectFactory.getInstance().createObject(IRobot.class).cleanRoom();
+        IRobot iRobot = ObjectFactory.getInstance().createObject(IRobot.class);
+        iRobot.cleanRoom();
     }
 }
