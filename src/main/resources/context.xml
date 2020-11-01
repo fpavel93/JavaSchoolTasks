@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ShakeSpearQuoter" class="real_spring.quoter.ShakeSpearQuoter">
+        <property name="message" value="To be or not to be"/>
+    </bean>
+    <bean id="TerminatorQuoter" class="real_spring.quoter.TerminatorQuoter">
+        <property name="messages">
+            <list value-type="java.lang.String">
+                <value>I'll be back</value>
+                <value>Astalavisa baby</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
