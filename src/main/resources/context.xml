@@ -11,8 +11,12 @@
             <list value-type="java.lang.String">
                 <value>I'll be back</value>
                 <value>Astalavisa baby</value>
+                <ref bean="anotherMessage"/>
             </list>
         </property>
+    </bean>
+    <bean id="anotherMessage" class="java.lang.String">
+        <constructor-arg value="trust me"/>
     </bean>
     <bean id="TalkingRobotImpl" class="real_spring.quoter.TalkingRobotImpl" init-method="talk">
         <property name="quoters">
