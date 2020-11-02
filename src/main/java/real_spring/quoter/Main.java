@@ -8,5 +8,6 @@ public class Main {
         //context.getBean(ShakeSpearQuoter.class).seyQuote();
         //context.getBean(TerminatorQuoter.class).seyQuote();
         //context.getBeansOfType(Quoter.class).values().forEach(Quoter::seyQuote);
+        context.close();
     }
 }

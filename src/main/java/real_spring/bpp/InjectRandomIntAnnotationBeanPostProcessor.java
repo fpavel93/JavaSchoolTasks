@@ -1,4 +1,4 @@
-package real_spring.injectRandomInt;
+package real_spring.bpp;
 
 import my_spring.iRobot.InjectRandomIntAnnotationObjectConfigurator;
 import org.springframework.beans.BeansException;
