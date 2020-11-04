@@ -1,13 +1,12 @@
 package real_spring.quoter;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        //context.getBean(ShakeSpearQuoter.class).seyQuote();
-        //context.getBean(TerminatorQuoter.class).seyQuote();
-        //context.getBeansOfType(Quoter.class).values().forEach(Quoter::seyQuote);
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Conf.class);
+
         context.close();
     }
 }

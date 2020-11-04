@@ -1,12 +1,14 @@
 package real_spring.quoter;
 
-import lombok.Data;
 import my_spring.iRobot.InjectRandomInt;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-@Data
+@Component
 public class ShakeSpearQuoter implements Quoter {
     @InjectRandomInt(min = 3,max = 5)
     private int repeat;
+    @Value("${shake}")
     private String message;
 
     @Override

@@ -1,13 +1,14 @@
 package real_spring.quoter;
 
-import lombok.Data;
-import my_spring.iRobot.InjectRandomInt;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
-@Data
+@Component
 public class TalkingRobotImpl implements TalkingRobot {
+    @Autowired
     private List<Quoter> quoters;
 
     @Override
