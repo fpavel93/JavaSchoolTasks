@@ -7,7 +7,7 @@ import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+@Film
 //@DeprecatedClass(newClass = T1000.class)
 public class TerminatorQuoter implements Quoter {
 

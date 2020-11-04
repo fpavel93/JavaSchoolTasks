@@ -2,9 +2,8 @@ package real_spring.quoter;
 
 import my_spring.iRobot.InjectRandomInt;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
+@Book
 public class ShakeSpearQuoter implements Quoter {
     @InjectRandomInt(min = 3,max = 5)
     private int repeat;
