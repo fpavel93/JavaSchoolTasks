@@ -1,15 +1,24 @@
 package real_spring.dbServices;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import javax.annotation.PostConstruct;
+
+import static real_spring.dbServices.DBType.*;
 
 @Service
 public class DaoService {
-    @Derby
-    Dao dao;
+    @DataBase(DERBY)
+    private Dao dao;
+    @DataBase(ORACLE)
+    private Dao backupDao;
 
-    @PostConstruct
-    public void crud(){
-        dao.crud();
+    @Scheduled(fixedDelay = 500)
+    public void work(){
+        dao.saveAll();
+    }
+
+    @Scheduled(fixedDelay = 3000)
+    public void backup(){
+        backupDao.saveAll();
     }
 }

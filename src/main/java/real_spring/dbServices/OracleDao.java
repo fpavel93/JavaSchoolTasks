@@ -1,9 +1,13 @@
 package real_spring.dbServices;
 
-@Oracle
+import lombok.SneakyThrows;
+
+@DataBase(DBType.ORACLE)
 public class OracleDao implements Dao {
+    @SneakyThrows
     @Override
-    public void crud() {
-        System.out.println("Oracle Dao do his logic");
+    public void saveAll() {
+        Thread.sleep(50);
+        System.out.println("save to OracleDB");
     }
 }

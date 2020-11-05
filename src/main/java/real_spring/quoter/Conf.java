@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("real_spring")
+@ComponentScan
 @PropertySource("classpath:application.properties")
 public class Conf {
 }

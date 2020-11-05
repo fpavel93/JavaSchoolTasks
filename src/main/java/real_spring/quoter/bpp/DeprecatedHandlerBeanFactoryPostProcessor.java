@@ -1,4 +1,4 @@
-package real_spring.bpp;
+package real_spring.quoter.bpp;
 
 import lombok.SneakyThrows;
 import org.springframework.beans.BeansException;

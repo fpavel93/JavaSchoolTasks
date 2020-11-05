@@ -1,9 +1,13 @@
 package real_spring.dbServices;
 
-@Derby
+import lombok.SneakyThrows;
+
+@DataBase(DBType.DERBY)
 public class DerbyDao implements Dao {
+    @SneakyThrows
     @Override
-    public void crud() {
-        System.out.println("Derby Dao do his logic");
+    public void saveAll() {
+        Thread.sleep(100);
+        System.out.println("save to DerbyDB");
     }
 }
