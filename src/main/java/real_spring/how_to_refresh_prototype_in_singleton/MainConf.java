@@ -13,7 +13,7 @@ import static design_patterns.heroesGame.RandomUtil.getRandomInRange;
 public class MainConf {
 
     @Bean
-    @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+    @Scope(value = "towSeconds", proxyMode = ScopedProxyMode.TARGET_CLASS)
     public Color color(){
         return new Color(getRandomInRange(0,255),getRandomInRange(0,255),getRandomInRange(0,255));
     }
