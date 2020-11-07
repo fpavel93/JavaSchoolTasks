@@ -7,6 +7,9 @@
         <fileset id="fileset2" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/real_spring/quoter/Conf.java</file>
         </fileset>
+        <fileset id="fileset3" name="Spring Application Context (2)" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/real_spring/distributionService/Config.java</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
